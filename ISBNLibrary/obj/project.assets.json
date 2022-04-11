@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj",
-      "projectName": "ISBNLibrary",
-      "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj",
+      "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
+      "projectName": "ISBNSearcher_NET",
+      "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
       "packagesPath": "/Users/berkbabadogan/.nuget/packages/",
-      "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/obj/",
+      "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/berkbabadogan/.nuget/NuGet/NuGet.Config"

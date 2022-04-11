@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj": {}
+    "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/ShowCase.csproj": {}
   },
   "projects": {
-    "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj": {
+    "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj",
-        "projectName": "ISBNLibrary",
-        "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj",
+        "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
+        "projectName": "ISBNSearcher_NET",
+        "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
         "packagesPath": "/Users/berkbabadogan/.nuget/packages/",
-        "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/obj/",
+        "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/berkbabadogan/.nuget/NuGet/NuGet.Config"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj": {
+    "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/ShowCase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj",
+        "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/ShowCase.csproj",
         "projectName": "ShowCase",
-        "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj",
+        "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/ShowCase.csproj",
         "packagesPath": "/Users/berkbabadogan/.nuget/packages/",
-        "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/obj/",
+        "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/berkbabadogan/.nuget/NuGet/NuGet.Config"
@@ -84,8 +84,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj": {
-                "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj"
+              "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj": {
+                "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj"
               }
             }
           }

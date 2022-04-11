@@ -22,12 +22,13 @@ public static class ISBNElementExtensions
         }
     }
 
+
     /// <summary>
     /// Make table HTML from list.
     /// </summary>
     /// <param name="lst">ISBNElement list.</param>
     /// <returns>string (HTML page with table)</returns>
-    public static string makeTable(this List<ISBNElement> lst)
+    public static string makeHTMLTable(this List<ISBNElement> lst)
     {
         var sb = new StringBuilder();
         sb.Append("<!DOCTYPE html>");

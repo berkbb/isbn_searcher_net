@@ -11,17 +11,17 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "ISBNLibrary/1.0.0": {
+      "ISBNSearcher_NET/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/ISBNLibrary.dll": {}
+          "bin/placeholder/ISBNSearcher_NET.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ISBNLibrary.dll": {}
+          "bin/placeholder/ISBNSearcher_NET.dll": {}
         }
       }
     }
@@ -54,7 +54,7 @@
         "packageIcon.png"
       ]
     },
-    "ISBNLibrary/1.0.0": {
+    "ISBNSearcher_NET/1.0.0": {
       "type": "project",
       "path": "../ISBNLibrary/ISBNLibrary.csproj",
       "msbuildProject": "../ISBNLibrary/ISBNLibrary.csproj"
@@ -62,7 +62,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ISBNLibrary >= 1.0.0",
+      "ISBNSearcher_NET >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -72,11 +72,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj",
+      "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/ShowCase.csproj",
       "projectName": "ShowCase",
-      "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj",
+      "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/ShowCase.csproj",
       "packagesPath": "/Users/berkbabadogan/.nuget/packages/",
-      "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/obj/",
+      "outputPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/berkbabadogan/.nuget/NuGet/NuGet.Config"
@@ -91,8 +91,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj": {
-              "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj"
+            "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj": {
+              "projectPath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj"
             }
           }
         }

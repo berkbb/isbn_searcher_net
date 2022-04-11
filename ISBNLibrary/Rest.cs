@@ -28,7 +28,7 @@ public static class Rest
 
 
 
-                    if (welcome.TotalItems == 1)
+                    if (welcome.TotalItems >= 1 && welcome.Items != null)
                     {
                         var info = welcome.Items.FirstOrDefault()!.VolumeInfo;
 
@@ -52,17 +52,17 @@ public static class Rest
         catch (HttpRequestException ex)
         {
             Console.WriteLine($"Error: {ex.Message} !");
-            return new ISBNElement("Cannot find ISBN !", "-", "-", "-", isbn);
+            return new ISBNElement("Cannot find ISBN !", "*", "*", "*", isbn);
         }
         catch (ArgumentNullException ex)
         {
             Console.WriteLine($"Error: {ex.ParamName} {ex.Message} !");
-            return new ISBNElement("Cannot find ISBN !", "-", "-", "-", isbn);
+            return new ISBNElement("Cannot find ISBN !","*", "*", "*", isbn);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error: {ex.Message} !");
-            return new ISBNElement("Cannot find ISBN !", "-", "-", "-", isbn);
+            return new ISBNElement("Cannot find ISBN !", "*", "*", "*", isbn);
         }
 
     }

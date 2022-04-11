@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "69Y2A4MTGbY93tnd9spy10+GkEx1sT7W/dWUTrjt5+rntZtQGhrLXauH2iRv49K0KfGrp1sDoNoE0hkXxZFOqw==",
+  "dgSpecHash": "yXrWzXwm2GA5ODsEMe+NaUYCBLintny5f84aF+IRplmjKjn3nuBQ4ACmDAMtGFsrAKZDC2UkewbgDVZO6dnrOw==",
   "success": true,
-  "projectFilePath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ISBNLibrary/ISBNLibrary.csproj",
+  "projectFilePath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
   "expectedPackageFiles": [
     "/Users/berkbabadogan/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
   ],

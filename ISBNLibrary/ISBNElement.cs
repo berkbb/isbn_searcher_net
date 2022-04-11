@@ -2,19 +2,29 @@ using System;
 
 public class ISBNElement
 {
-    //Title
+    /// <summary>
+    /// Title
+    /// </summary>
     public string title;
 
-    //Author
+    /// <summary>
+    /// Author
+    /// </summary>
     public string author;
 
-    //Published Date
+    /// <summary>
+    /// Published Date
+    /// </summary>
     public string publishDate;
 
-    //ISBN_10
+    /// <summary>
+    /// ISBN_10
+    /// </summary>
     public string ISBN_10;
 
-    //ISBN_13
+    /// <summary>
+    /// ISBN_13
+    /// </summary>
     public string ISBN_13;
 
     /// <summary>
@@ -41,6 +51,8 @@ public class ISBNElement
     {
         return $"Book -- > Title: {this.title} - Author: {this.author} -  Publish Date: {this.publishDate} - ISBN 10: {this.ISBN_10} - ISBN 13: {this.ISBN_13}";
     }
+
+
     /// <summary>
     /// Make table row from class item.
     /// </summary>

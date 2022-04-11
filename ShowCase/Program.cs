@@ -17,11 +17,16 @@ foreach (var item in barcodesList)
     Console.WriteLine(book_item.ToString());
 }
 //Make HTML table from the gathered element list.
-var dataTable = ISBNElementExtensions.elements.makeTable();
+var dataTable = ISBNElementExtensions.elements.makeHTMLTable();
 
 //Write the HTML table to the file.
 var dateTimePostfix = DateTime.Now.ToString("yyyyMMddHHmmss");
 var outputName = $"datatable_{dateTimePostfix}.html";
+var path = $"{outputName}";
 
-await File.WriteAllTextAsync(outputName, dataTable);
-Console.WriteLine($"The data table is printed to HTML document, you can find it in the ShowCase/{outputName}.");
+await File.WriteAllTextAsync(path, dataTable);
+Console.WriteLine($"The data table is printed to HTML document, you can find it in the Showcase/{path}.");
+
+//Get object from the gathered element list.
+Console.WriteLine(ISBNElementExtensions.elements.LastOrDefault());
+
