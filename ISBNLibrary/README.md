@@ -1,5 +1,5 @@
 
-# ISN Searcher for .NET. 
+# ISBN Searcher for .NET. 
 
 [![NuGet Version](https://img.shields.io/nuget/v/ISBNSearcher_NET?&label=nuget&color=informational&logo=nuget)](https://www.nuget.org/packages/ISBNSearcher_NET/) 
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ISBNSearcher_NET?color=brightgreen&logo=nuget)](https://www.nuget.org/packages/ISBNSearcher_NET/)
