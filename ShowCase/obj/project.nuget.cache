@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LW20DrWY/3ToWGT6H8zxD3/3F1KTMMneO1UhwJ1Sycv2A/cSUIwRKtle2bDU3dKYOZiASgisdRIoQexC9kcbxg==",
+  "success": true,
+  "projectFilePath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher/ShowCase/ShowCase.csproj",
+  "expectedPackageFiles": [
+    "/Users/berkbabadogan/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
