@@ -5,8 +5,9 @@ using System;
 using System.Text.Json;
 
 //Read the JSON file for gathering barcodes.
-string fileName = "barcodes.json";
-string jsonString = File.ReadAllText(fileName);
+string vscode_fileName = "barcodes.json";
+string vsmac_fileName = "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/barcodes.json";
+string jsonString = File.ReadAllText(vsmac_fileName);
 List<Barcode> barcodesList = JsonSerializer.Deserialize<List<Barcode>>(jsonString)!;
 
 //Print the gathered ISBN item with GetBookInfo() with given barcode .
