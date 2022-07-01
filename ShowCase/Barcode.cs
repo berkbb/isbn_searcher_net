@@ -5,4 +5,6 @@ public class Barcode
     /// </summary>
     public string? barcode { get; set; }
 
+
 }
+
