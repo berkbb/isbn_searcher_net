@@ -1,0 +1,13 @@
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/bin/Debug/net9.0/ISBNLibrary.deps.json
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/bin/Debug/net9.0/ISBNLibrary.dll
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/bin/Debug/net9.0/ISBNLibrary.pdb
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.csproj.AssemblyReference.cache
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.AssemblyInfoInputs.cache
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.AssemblyInfo.cs
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.csproj.CoreCompileInputs.cache
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.sourcelink.json
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.dll
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/refint/ISBNLibrary.dll
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ISBNLibrary.pdb
+/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/obj/Debug/net9.0/ref/ISBNLibrary.dll

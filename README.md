@@ -12,38 +12,54 @@
 
 * Searches ISBN metadata with given local JSON via API supplied by Google.
 
+* Searches ISBN metadata with given local JSON via API supplied by isbnsearch.org.
+
 
 
 
 
 ## Usage
- 
+
+### With Google Books API
 
 ```c#
 
 
-//Read the JSON file for gathering barcodes.
-string fileName = "barcodes.json";
-string jsonString = File.ReadAllText(fileName);
+// Read the JSON file for gathering barcodes with Google
+string vscode_fileName = "barcodes.json";
+string jsonString = File.ReadAllText(vscode_fileName);
 List<Barcode> barcodesList = JsonSerializer.Deserialize<List<Barcode>>(jsonString)!;
 
-//Print the gathered ISBN item with GetBookInfo() with given barcode .
+// Print the gathered ISBN item with GetBookInfo() with given barcode.
 foreach (var item in barcodesList)
 {
-    var book_item = await Rest.GetBookInfoAsync(item.barcode);
-    ISBNElementExtensions.elements.Add(book_item);
-    Console.WriteLine(book_item.ToString());
+    if (!string.IsNullOrEmpty(item.barcode))
+    {
+        var book_item = await Rest.GetGoogleBookInfoAsync(item.barcode);
+        // Add the item to the ISBNElementExtensions.elements list.
+        ISBNElementExtensions.elements.Add(book_item);
+        Console.WriteLine(book_item.ToString());
+    }
+    else
+    {
+        Console.WriteLine("Warning: Encountered an empty or null barcode, skipping.");
+    }
 }
-//Make HTML table from the gathered element list.
-var dataTable = ISBNElementExtensions.elements.makeTable();
+// Make HTML table from the gathered element list.
+var dataTable = ISBNElementExtensions.elements.makeHTMLTable();
 
-//Write the HTML table to the file.
+// Write the HTML table to the file.
 var dateTimePostfix = DateTime.Now.ToString("yyyyMMddHHmmss");
 var outputName = $"datatable_{dateTimePostfix}.html";
+var path = $"{outputName}";
 
-await File.WriteAllTextAsync(outputName, dataTable);
-Console.WriteLine($"The data table is printed to HTML document, you can find it in the ShowCase/{outputName}.");
+await File.WriteAllTextAsync(path, dataTable);
+Console.WriteLine($"Data table has been written to HTML file. You can find it at Showcase/{path}.");
+
+// Get object from the gathered element list.
+Console.WriteLine(ISBNElementExtensions.elements.LastOrDefault());
+
+
 ```
-
 
 

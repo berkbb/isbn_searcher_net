@@ -7,7 +7,7 @@ public static class ISBNElementExtensions
     /// <summary>
     /// Elements list.
     /// </summary>
-    public static List<ISBNElement> elements = new List<ISBNElement>();
+    public static List<ISBNElement> elements = new();
 
 
     /// <summary>
@@ -42,7 +42,7 @@ public static class ISBNElementExtensions
         sb.Append("</head>");
         sb.Append("<body>");
         sb.Append("<table>");
-        sb.Append(@$"<tr style=""background-color:grey;""><th>ISBN_13</th><th>Title</th><th>Author</th><th>Year</th><th>ISBN_10</th></tr>");
+        sb.Append(@$"<tr style=""background-color:grey;""><th>ISBN</th><th>Kitap Adı</th><th>Yazar</th></tr>");
         foreach (var element in lst)
         {
             sb.Append(element.ToTableRow());
@@ -59,7 +59,7 @@ public static class ISBNElementExtensions
     /// <returns></returns>
     public static string compileArrayInString(this string[] str)
     {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new();
         for (int i = 0; i < str.Length; i++)
         {
             sb.Append(str[i]);

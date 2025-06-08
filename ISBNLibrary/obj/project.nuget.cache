@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9VSJqFdFVotCtsuTr/gCag8N0tt7JKsTQZnWuQNf0Gs4FudR77V7o0GVf5v0AYyr2eGlr7B7US5VFSseRcw9+g==",
+  "dgSpecHash": "M+OAv4ECq8U=",
   "success": true,
   "projectFilePath": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
   "expectedPackageFiles": [
-    "/Users/berkbabadogan/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+    "/Users/berkbabadogan/.nuget/packages/htmlagilitypack/1.12.1/htmlagilitypack.1.12.1.nupkg.sha512"
   ],
   "logs": []
 }

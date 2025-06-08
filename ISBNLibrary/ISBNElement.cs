@@ -40,8 +40,8 @@ public class ISBNElement
         this.title = title;
         this.author = author;
         this.publishDate = publishDate;
-        this.ISBN_10 = ISBN_ten;
-        this.ISBN_13 = isbn_thirteen;
+        ISBN_10 = ISBN_ten;
+        ISBN_13 = isbn_thirteen;
     }
     /// <summary>
     /// ToString() overload.
@@ -49,7 +49,16 @@ public class ISBNElement
     /// <returns>string</returns>
     public override string ToString()
     {
-        return $"Book -- > Title: {this.title} - Author: {this.author} -  Publish Date: {this.publishDate} - ISBN 10: {this.ISBN_10} - ISBN 13: {this.ISBN_13}";
+        return
+            "╔════════════════════════════════════╗\n" +
+            "║           Book Details            ║\n" +
+            "╠════════════════════════════════════╣\n" +
+            $"║ Title     : {title,-22}║\n" +
+            $"║ Author    : {author,-22}║\n" +
+            $"║ ISBN-13   : {ISBN_13,-22}║\n" +
+            $"║ ISBN-10   : {ISBN_10,-22}║\n" +
+            $"║ Published : {publishDate,-22}║\n" +
+            "╚════════════════════════════════════╝\n";
     }
 
 
@@ -59,7 +68,7 @@ public class ISBNElement
     /// <returns>string (HTML row)</returns>
     public String ToTableRow()
     {
-        return $"<tr><td>{this.ISBN_13}</td><td>{this.title}</td><td>{this.author}</td><td>{this.publishDate}</td><td>{this.ISBN_10}</td></tr>";
+        return $"<tr><td>{ISBN_13}</td><td>{title}</td><td>{author}</td></tr>";
     }
 
 
