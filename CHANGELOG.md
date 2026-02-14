@@ -1,4 +1,4 @@
-## [2.1.0] - 2026-02-14
+## [2.1.1] - 2026-02-14
 
 ### Added
 - Blazor tabanli `ShowCase` arayuzu eklendi.
