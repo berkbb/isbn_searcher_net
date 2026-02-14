@@ -25,7 +25,7 @@
           "buildMultiTargeting/Microsoft.AspNetCore.App.Internal.Assets.targets": {}
         }
       },
-      "ISBNSearcher_NET/2.1.0": {
+      "ISBNSearcher_NET/2.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -109,7 +109,7 @@
         "microsoft.aspnetcore.app.internal.assets.nuspec"
       ]
     },
-    "ISBNSearcher_NET/2.1.0": {
+    "ISBNSearcher_NET/2.1.1": {
       "type": "project",
       "path": "../ISBNLibrary/ISBNLibrary.csproj",
       "msbuildProject": "../ISBNLibrary/ISBNLibrary.csproj"
@@ -117,7 +117,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "ISBNSearcher_NET >= 2.1.0",
+      "ISBNSearcher_NET >= 2.1.1",
       "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.3"
     ]
   },

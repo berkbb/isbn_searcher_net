@@ -9,7 +9,7 @@ ISBN ile kitap bilgisi aramak icin .NET kutuphanesi (`ISBNLibrary`) ve Blazor UI
 
 - `ISBNLibrary`: `net10.0`
 - `ShowCase` (Blazor): `net10.0`
-- Package version: `2.1.0`
+- Package version: `2.1.1`
 
 ## Features
 

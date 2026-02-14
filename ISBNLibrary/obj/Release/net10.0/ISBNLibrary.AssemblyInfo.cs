@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 Berk Babadoğan.")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Searches ISBN metadata with given local JSON via API supplied by Google.")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("2.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.1.0+0ce93c4a0b3672cd2a4e3038c46d1b44f80a0316")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("2.1.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.1.1+3334487111215e7d5a0228b26fb9d2548ccb203e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ISBNLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ISBNLibrary")]
-[assembly: System.Reflection.AssemblyVersionAttribute("2.1.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("2.1.1.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/berkbb/isbn_searcher_net.git")]
 
 // MSBuild WriteCodeFragment sınıfı tarafından oluşturuldu.

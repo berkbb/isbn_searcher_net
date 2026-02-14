@@ -73,7 +73,7 @@
     "/Users/berkbabadogan/.nuget/packages/": {}
   },
   "project": {
-    "version": "2.1.0",
+    "version": "2.1.1",
     "restore": {
       "projectUniqueName": "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/ISBNLibrary.csproj",
       "projectName": "ISBNSearcher_NET",
