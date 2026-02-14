@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ISBNSearcher_NET</id>
+    <version>2.1.0</version>
+    <title>ISBN Searcher for .NET</title>
+    <authors>Berk Babadoğan</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <readme>README.md</readme>
+    <description>Searches ISBN metadata with given local JSON via API supplied by Google.</description>
+    <releaseNotes>* .NET 10 target update.
+      * Blazor ShowCase UI added.
+      * Launcher scripts for macOS, Windows, Linux.
+      * Parsing and error handling improvements.</releaseNotes>
+    <copyright>Copyright (c) 2026 Berk Babadoğan.</copyright>
+    <tags>isbn,book,search,arama,kitap</tags>
+    <repository type="git" url="https://github.com/berkbb/isbn_searcher_net.git" branch="main" commit="0ce93c4a0b3672cd2a4e3038c46d1b44f80a0316" />
+    <dependencies>
+      <group targetFramework="net10.0">
+        <dependency id="HtmlAgilityPack" version="1.12.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/bin/Release/net10.0/ISBNLibrary.dll" target="lib/net10.0/ISBNLibrary.dll" />
+    <file src="/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/LICENSE.txt" target="/LICENSE.txt" />
+    <file src="/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ISBNLibrary/README.md" target="/README.md" />
+  </files>
+</package>

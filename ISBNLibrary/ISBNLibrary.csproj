@@ -1,17 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>ISBNSearcher_NET</PackageId>
     <Title>ISBN Searcher for .NET</Title>
-    <Version>1.0.0</Version>
+    <Version>2.1.0</Version>
     <Authors>Berk Babadoğan</Authors>
     <Description>Searches ISBN metadata with given local JSON via API supplied by Google.</Description>
     <Language>en-US</Language>
-    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -21,9 +20,12 @@
     <RepositoryBranch>main</RepositoryBranch>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>
-      * Inital release.
+      * .NET 10 target update.
+      * Blazor ShowCase UI added.
+      * Launcher scripts for macOS, Windows, Linux.
+      * Parsing and error handling improvements.
     </PackageReleaseNotes>
-    <Copyright>Copyright (c) 2022 Berk Babadoğan.</Copyright>
+    <Copyright>Copyright (c) 2026 Berk Babadoğan.</Copyright>
     <PackageTags>isbn,book,search,arama,kitap</PackageTags>
   </PropertyGroup>
   <ItemGroup>

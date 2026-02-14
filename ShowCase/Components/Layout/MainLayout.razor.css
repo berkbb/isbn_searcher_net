@@ -1,0 +1,24 @@
+:host {
+    display: block;
+}
+
+#blazor-error-ui {
+    background: #fee2e2;
+    border-top: 1px solid #ef4444;
+    color: #7f1d1d;
+    bottom: 0;
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}

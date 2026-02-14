@@ -1,76 +1,50 @@
-using System;
+using System.Net;
 
-public class ISBNElement
+public sealed class ISBNElement
 {
-    /// <summary>
-    /// Title
-    /// </summary>
-    public string title;
+    public string Title { get; }
+    public string Author { get; }
+    public string PublishDate { get; }
+    public string Isbn10 { get; }
+    public string Isbn13 { get; }
 
-    /// <summary>
-    /// Author
-    /// </summary>
-    public string author;
+    // Legacy field aliases kept for backward compatibility.
+    public string title => Title;
+    public string author => Author;
+    public string publishDate => PublishDate;
+    public string ISBN_10 => Isbn10;
+    public string ISBN_13 => Isbn13;
 
-    /// <summary>
-    /// Published Date
-    /// </summary>
-    public string publishDate;
-
-    /// <summary>
-    /// ISBN_10
-    /// </summary>
-    public string ISBN_10;
-
-    /// <summary>
-    /// ISBN_13
-    /// </summary>
-    public string ISBN_13;
-
-    /// <summary>
-    /// ISBN element.
-    /// </summary>
-    /// <param name="title">Book Title</param>
-    /// <param name="author">Author</param>
-    /// <param name="publishDate">Publish date.</param>
-    /// <param name="ISBN_ten"> ISBN 10</param>
-    /// <param name="isbn_thirteen">ISBN 13</param>
-    public ISBNElement(string title, string author, string publishDate, string ISBN_ten, string isbn_thirteen)
+    public ISBNElement(string title, string author, string publishDate, string isbnTen, string isbnThirteen)
     {
-        this.title = title;
-        this.author = author;
-        this.publishDate = publishDate;
-        ISBN_10 = ISBN_ten;
-        ISBN_13 = isbn_thirteen;
+        Title = string.IsNullOrWhiteSpace(title) ? "Unknown" : title.Trim();
+        Author = string.IsNullOrWhiteSpace(author) ? "Unknown" : author.Trim();
+        PublishDate = string.IsNullOrWhiteSpace(publishDate) ? "Unknown" : publishDate.Trim();
+        Isbn10 = string.IsNullOrWhiteSpace(isbnTen) ? "N/A" : isbnTen.Trim();
+        Isbn13 = string.IsNullOrWhiteSpace(isbnThirteen) ? "N/A" : isbnThirteen.Trim();
     }
-    /// <summary>
-    /// ToString() overload.
-    /// </summary>
-    /// <returns>string</returns>
+
+    public static ISBNElement NotFound(string isbn)
+    {
+        return new ISBNElement("Cannot find ISBN!", "*", "*", "*", isbn);
+    }
+
     public override string ToString()
     {
         return
             "╔════════════════════════════════════╗\n" +
             "║           Book Details            ║\n" +
             "╠════════════════════════════════════╣\n" +
-            $"║ Title     : {title,-22}║\n" +
-            $"║ Author    : {author,-22}║\n" +
-            $"║ ISBN-13   : {ISBN_13,-22}║\n" +
-            $"║ ISBN-10   : {ISBN_10,-22}║\n" +
-            $"║ Published : {publishDate,-22}║\n" +
+            $"║ Title     : {Title,-22}║\n" +
+            $"║ Author    : {Author,-22}║\n" +
+            $"║ ISBN-13   : {Isbn13,-22}║\n" +
+            $"║ ISBN-10   : {Isbn10,-22}║\n" +
+            $"║ Published : {PublishDate,-22}║\n" +
             "╚════════════════════════════════════╝\n";
     }
 
-
-    /// <summary>
-    /// Make table row from class item.
-    /// </summary>
-    /// <returns>string (HTML row)</returns>
-    public String ToTableRow()
+    public string ToTableRow()
     {
-        return $"<tr><td>{ISBN_13}</td><td>{title}</td><td>{author}</td></tr>";
+        return $"<tr><td>{WebUtility.HtmlEncode(Isbn13)}</td><td>{WebUtility.HtmlEncode(Title)}</td><td>{WebUtility.HtmlEncode(Author)}</td></tr>";
     }
-
-
 }
-

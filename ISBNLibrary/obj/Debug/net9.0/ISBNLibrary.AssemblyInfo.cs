@@ -12,7 +12,7 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Berk Babadoğan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2022 Berk Babadoğan.")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 Berk Babadoğan.")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Searches ISBN metadata with given local JSON via API supplied by Google.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48032d9bd28713e03ed5fb3ff6fe0eaf98b6f94f")]

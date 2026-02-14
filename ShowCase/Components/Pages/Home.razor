@@ -1,0 +1,163 @@
+@page "/"
+
+<PageTitle>ISBN Searcher</PageTitle>
+
+<section class="hero">
+    <h1>ISBN Searcher</h1>
+    <p>Google Books veya isbnsearch.org ile kitap bilgisini hızlıca çekin.</p>
+</section>
+
+<section class="card-panel">
+    <div class="toolbar">
+        <label for="source">Kaynak</label>
+        <select id="source" @bind="selectedSource">
+            <option value="google">Google Books</option>
+            <option value="isbnsearch">isbnsearch.org</option>
+        </select>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>Tek ISBN</h2>
+            <div class="field-row">
+                <input @bind="singleIsbn" placeholder="9780306406157" />
+                <button class="primary" @onclick="SearchSingleAsync" disabled="@isLoading">Ara</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Toplu ISBN</h2>
+            <textarea @bind="batchInput" rows="6" placeholder="Her satıra bir ISBN yazın"></textarea>
+            <button class="primary" @onclick="SearchBatchAsync" disabled="@isLoading">Toplu Ara</button>
+        </div>
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <p class="status">@message</p>
+    }
+
+    @if (results.Count > 0)
+    {
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ISBN-13</th>
+                        <th>ISBN-10</th>
+                        <th>Kitap</th>
+                        <th>Yazar</th>
+                        <th>Yayın Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in results)
+                    {
+                        <tr>
+                            <td>@item.Isbn13</td>
+                            <td>@item.Isbn10</td>
+                            <td>@item.Title</td>
+                            <td>@item.Author</td>
+                            <td>@item.PublishDate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>
+
+@code {
+    private string singleIsbn = string.Empty;
+    private string batchInput = string.Empty;
+    private string selectedSource = "google";
+    private bool isLoading;
+    private string? message;
+    private List<ISBNElement> results = new();
+
+    private async Task SearchSingleAsync()
+    {
+        var isbn = NormalizeIsbn(singleIsbn);
+        if (string.IsNullOrEmpty(isbn))
+        {
+            message = "Lutfen gecerli bir ISBN girin.";
+            results.Clear();
+            return;
+        }
+
+        isLoading = true;
+        message = "Araniyor...";
+        StateHasChanged();
+
+        try
+        {
+            var result = await SearchAsync(isbn);
+            results = new List<ISBNElement> { result };
+            message = "1 sonuc bulundu.";
+        }
+        catch
+        {
+            results.Clear();
+            message = "Arama sirasinda bir hata olustu.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task SearchBatchAsync()
+    {
+        var isbns = batchInput
+            .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(NormalizeIsbn)
+            .Where(x => !string.IsNullOrEmpty(x))
+            .Distinct()
+            .ToList();
+
+        if (isbns.Count == 0)
+        {
+            message = "Toplu arama icin en az bir gecerli ISBN girin.";
+            results.Clear();
+            return;
+        }
+
+        isLoading = true;
+        message = "Toplu arama devam ediyor...";
+        StateHasChanged();
+
+        try
+        {
+            var tasks = isbns.Select(x => SearchAsync(x!));
+            results = (await Task.WhenAll(tasks)).ToList();
+            message = $"{results.Count} sonuc bulundu.";
+        }
+        catch
+        {
+            results.Clear();
+            message = "Toplu arama sirasinda bir hata olustu.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private Task<ISBNElement> SearchAsync(string isbn)
+    {
+        return selectedSource == "isbnsearch"
+            ? Rest.GetISBNSearchHtmlAsync(isbn)
+            : Rest.GetGoogleBookInfoAsync(isbn);
+    }
+
+    private static string? NormalizeIsbn(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        var cleaned = new string(value.Where(c => char.IsDigit(c) || c == 'X' || c == 'x').ToArray());
+        return cleaned.Length is 10 or 13 ? cleaned.ToUpperInvariant() : null;
+    }
+}

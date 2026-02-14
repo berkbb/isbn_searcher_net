@@ -1,36 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Text.Json;
+using ShowCase.Components;
 
-// Read the JSON file for gathering barcodes with Google
-string vscode_fileName = "barcodes.json";
-// string vsmac_fileName = "/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net/ShowCase/barcodes.json";
-string jsonString = File.ReadAllText(vscode_fileName);
-List<Barcode> barcodesList = JsonSerializer.Deserialize<List<Barcode>>(jsonString)!;
+var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseStaticWebAssets();
 
-// Print the gathered ISBN item with GetBookInfo() with given barcode.
-foreach (var item in barcodesList)
+// Add services to the container.
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
-    if (!string.IsNullOrEmpty(item.barcode))
-    {
-        // var book_item = await Rest.GetGoogleBookInfoAsync(item.barcode);
-        var book_item = await Rest.GetISBNSearchHtmlAsync(item.barcode);
-        // Add the item to the ISBNElementExtensions.elements list.
-        ISBNElementExtensions.elements.Add(book_item);
-        // Console.WriteLine(book_item.ToString());
-    }
-    else
-    {
-        Console.WriteLine("Warning: Encountered an empty or null barcode, skipping.");
-    }
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
-// Make HTML table from the gathered element list.
-var dataTable = ISBNElementExtensions.elements.makeHTMLTable();
+app.UseHttpsRedirection();
 
-// Write the HTML table to the file.
-var dateTimePostfix = DateTime.Now.ToString("yyyyMMddHHmmss");
-var outputName = $"datatable_{dateTimePostfix}.html";
-var path = $"{outputName}";
+app.UseAntiforgery();
 
-await File.WriteAllTextAsync(path, dataTable);
-Console.WriteLine($"Data table has been written to HTML file. You can find it at Showcase/{path}.");
+app.MapStaticAssets();
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
+app.Run();

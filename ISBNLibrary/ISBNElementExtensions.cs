@@ -1,73 +1,47 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 public static class ISBNElementExtensions
 {
     /// <summary>
-    /// Elements list.
+    /// Legacy shared list kept for backward compatibility.
     /// </summary>
     public static List<ISBNElement> elements = new();
 
-
-    /// <summary>
-    /// Print raw elements.
-    /// </summary>
-    /// <param name="lst">ISBNElement list.</param>
-    public static void PrintElements(this List<ISBNElement> lst)
+    public static void PrintElements(this IEnumerable<ISBNElement> items)
     {
-        foreach (var element in lst)
+        foreach (var element in items)
         {
             Console.WriteLine(element);
         }
     }
 
-
-    /// <summary>
-    /// Make table HTML from list.
-    /// </summary>
-    /// <param name="lst">ISBNElement list.</param>
-    /// <returns>string (HTML page with table)</returns>
-    public static string makeHTMLTable(this List<ISBNElement> lst)
+    public static string MakeHtmlTable(this IEnumerable<ISBNElement> items)
     {
         var sb = new StringBuilder();
-        sb.Append("<!DOCTYPE html>");
-        sb.Append("<html>");
-        sb.Append("<head>");
+        sb.Append("<!DOCTYPE html><html><head><meta charset=\"utf-8\"/>");
         sb.Append("<style>");
-        sb.Append("body {background-color: powderblue;}");
-        sb.Append("table { background-color: white; width: 100%; table-layout: fixed; overflow-wrap: break-word;}");
-        sb.Append("table, th, td {border: 1px solid;}");
-        sb.Append("</style>");
-        sb.Append("</head>");
-        sb.Append("<body>");
-        sb.Append("<table>");
-        sb.Append(@$"<tr style=""background-color:grey;""><th>ISBN</th><th>Kitap Adı</th><th>Yazar</th></tr>");
-        foreach (var element in lst)
+        sb.Append("body{font-family:Segoe UI,Tahoma,sans-serif;background:#f8fafc;color:#0f172a;padding:24px;} ");
+        sb.Append("table{border-collapse:collapse;width:100%;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.08);} ");
+        sb.Append("th,td{border:1px solid #e2e8f0;padding:10px;text-align:left;} th{background:#0f172a;color:#fff;}");
+        sb.Append("</style></head><body>");
+        sb.Append("<table><tr><th>ISBN-13</th><th>Book Title</th><th>Author</th></tr>");
+
+        foreach (var element in items)
         {
             sb.Append(element.ToTableRow());
         }
-        sb.Append("</table>");
-        sb.Append("</body>");
-        sb.Append("</html>");
+
+        sb.Append("</table></body></html>");
         return sb.ToString();
     }
-    /// <summary>
-    /// Combines elements in array witth comma .
-    /// </summary>
-    /// <param name="str">string array</param>
-    /// <returns></returns>
-    public static string compileArrayInString(this string[] str)
+
+    public static string CompileArrayInString(this IEnumerable<string>? values)
     {
-        StringBuilder sb = new();
-        for (int i = 0; i < str.Length; i++)
-        {
-            sb.Append(str[i]);
-            if (i != str.Length - 1)
-            {
-                sb.Append(", ");
-            }
-        }
-        return sb.ToString();
+        return values is null ? string.Empty : string.Join(", ", values.Where(v => !string.IsNullOrWhiteSpace(v)));
     }
+
+    // Legacy method names preserved to avoid breaking existing consumers.
+    public static string makeHTMLTable(this List<ISBNElement> lst) => lst.MakeHtmlTable();
+    public static string compileArrayInString(this string[] str) => str.CompileArrayInString();
 }
