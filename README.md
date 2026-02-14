@@ -27,7 +27,7 @@ ISBN ile kitap bilgisi aramak icin .NET kutuphanesi (`ISBNLibrary`) ve Blazor UI
 Proje klasoru:
 
 ```bash
-cd /Users/berkbabadogan/Documents/GitHub/isbn_searcher_net
+cd isbn_searcher_net
 ```
 
 ### macOS

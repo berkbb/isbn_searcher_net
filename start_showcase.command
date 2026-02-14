@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 
-PROJECT_DIR="/Users/berkbabadogan/Documents/GitHub/isbn_searcher_net"
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 APP_URL="http://localhost:5230"
 
 cd "$PROJECT_DIR"
